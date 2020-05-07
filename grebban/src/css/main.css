@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html {
+    height:100%;
+}
+
+body {
+    height: 100%;
+    position: relative;
+}
+
+input: focus,
+select: focus,
+textarea: focus,
+button: focus {
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-apparance: none;
+    -moz-apparance: none;
+    apparance: none;
+    margin: 0;
+}
+
+input,
+select,
+button {
+    background: white;
+}
+/* For Opera and Safari etc..*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+/* For Microsoft browsers*/
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #ccc;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #ccc;
+}
+
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Media Queries */
+/* Small screens phones, tablets etc.. */
+@media (min-width: 320px) {
+    .board {
+        max-width: 95%;
+        overflow: hidden;
+        padding: 2.5px;
+        background: #ffe8f6;
+        -webkit-box-shadow: 0 7px 20px 0 rgba(0,0,0,0.3);
+                box-shadow: 0 7px 20px 0 rgba(0,0,0,0.3);
+        margin-bottom: 25%;
+    }
+    .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row;
+                flex-flow: row;
+    }
+    .cell {
+        height: 80px;
+        width: 80px;
+        -webkit-box-shadow: 0 0 0 1px rgba(100, 100, 100, 0.1);
+                box-shadow: 0 0 0 1px rgba(100, 100, 100, 0.1);
+        margin: 2px;
+        text-align: center;
+        line-height: 80px;
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    cell:hover {
+        background: #123123;
+    }
+}
+
+@media (min-width: 992px) {
+    .board {
+        max-width: 50%;
+        margin-bottom: 0;
+    }
+    .cell {
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 320px) {
+
+    .side {
+        background: white;
+        -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.4);
+                box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.4);
+        text-align: left;
+        margin-right: 0px;
+        width: auto;
+        overflow: hidden;
+        width: 80%;
+        margin-bottom: 10%;
+    }
+    .side .header {
+        padding: 10px 30px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        background: #f2edf1;
+        color: black;
+    }
+    .side .statTitle {
+        padding: 15px 20px;
+        color: #123123;
+        border-top: 2px solid #f2edf1;
+    }
+    .side .stat {
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        float: right;
+    }
+    .side .restartContainer {
+        padding: 20px;
+    }
+    .side .restartContainer .restartBtn {
+        border: 0;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        display: block;
+        font-weight: bold;
+        color: black;
+        background: #fae8f9;
+        font-size: 1.2rem;
+        cursor: pointer;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    .side .restartContainer .restartBtn {
+        -webkit-box-shadow: 0 7px 7px 0 #d6c9d5;
+                box-shadow: 0 7px 7px 0 #d6c9d5;
+    }
+}
+
+@media (min-width: 992px) {
+    .side {
+        margin-right: 20px;
+        width: auto;
+        width: 20%;
+    }
+}
+/* General...*/
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+input:focus {
+    outline: none;
+}
+
+body {
+    background: #f0f0f0;
+}
+.disabled {
+    pointer-events: none;
+}
+
+@media (min-width: 320px) {
+    #game {
+        text-align: center;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        padding-top: 50%;
+    }
+    .mainTitle {
+        background: #f2edf1;
+        padding: 20px;
+    }
+    .mainTitle h1 {
+        color: #333333;
+        text-transform: uppercase;
+        letter-spacing: 13px;
+        font-size: 2.5rem;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    .displayContainer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: column wrap;
+                flex-flow: column wrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding-top: 30px;
+    }
+    .cellControllers {
+        padding: 20px;
+        -webkit-box-shadow: 0 7px 7px 0 rgba(0,0,0,0.2);
+                box-shadow: 0 7px 7px 0 rgba(0,0,0,0.2);
+        background: #f0f0f0;
+        border-radius: 7px;
+        max-width: 200px;
+    }
+    .cellControllers label {
+        font-weight: bold;
+    }
+    .cellControllers input {
+        width: 40px;
+        border: 1px solid #f2edf1;
+        margin: 15px 0;
+        color: #333333;
+        font-size: 2rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    .startBtn {
+        display: block;
+        width: 100%;
+        padding: 12px 40px;
+        background: #fae8f9;
+        border-radius: 5px;
+        border: 0;
+        color: black;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        color:black;
+        font-weight: bold;
+    }
+    .startBtn:hover {
+        -webkit-box-shadow: 0 7px 10px 0 #d6c9d5;
+                box-shadow: 0 7px 10px 0 #d6c9d5;
+    }
+    .success {
+        padding: 20px;
+        text-align: center;
+    }
+    .success h3 {
+        border-radius: 5px;
+        font-size: 1.8rem;
+        color: black;
+        padding: 20px;
+        background: #ffffff;
+    }
+}
+
+@media (min-width: 992px) {
+    #game {
+        padding-top: 12%;
+        padding-bottom: 8%;
+    }
+    .mainTitle h1 {
+        font-size: 7.5rem;
+    }
+    .displayContainer {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        padding-right: 15%;
+    }
+    .cellControllers {
+        -webkit-transform: translateX(100px);
+                transform: translateX(100px);
+    }
+}
