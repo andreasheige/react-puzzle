@@ -4,9 +4,10 @@ import Board from '../board/Board';
 
 export default class Game extends Component {
 
+    // Starting with 4 so it is an 15 pieces-puzzle to solve
     state={
-        cells: 4,
-        movements: 0,
+        cells: 4, // Change here if you want fewer than 4 cells
+        moved: 0, // Not fixed yet.
         finished: false,
         collection: [],
         start: false,
@@ -185,18 +186,12 @@ export default class Game extends Component {
                 finished: resolved
             });
 
-            // Get all div´s and disable them
-
-        const divs = document.querySelector(".cell");
-        divs.forEach(div => {
-            div.classList.add('disabled')
-        });
         }
     }
 
     startGame = async () => {
 
-        // Check the cells for correct value
+        // Check the cells for correct value + change 4 here for fewer
         if (!this.state.cells || this.state.cells < 4) {
             await this.setState({
                 cells: 4
@@ -239,9 +234,9 @@ export default class Game extends Component {
         // eslint-disable-next-line no-restricted-globals
         const width = screen.width;
         game.style.paddingTop = '0%';
-        if (width > 992) {
+        if (width > 992) { // desktop
             title.style.fontSize = '4-rem';
-        } else if (width > 320) {
+        } else if (width > 320) { // mobile
             title.style.fontSize = '2-rem';
         }
 
@@ -282,7 +277,7 @@ export default class Game extends Component {
         clearInterval(this.intervalTimer);
         this.setState({
             timer: 0,
-            movements: 0,
+            moved: 0,
             finished: false
         })
         this.startGame();
@@ -296,7 +291,7 @@ export default class Game extends Component {
 
     render () {
 
-        const isFinished = this.state.finished ? <div className="success"><h4>Con´Grattz!!</h4></div> : null;
+        const isFinished = this.state.finished ? <div className="success"><h4> YES! You did it!!</h4></div> : null;
 
         return (
             <div className="unselectable" id="game">
@@ -311,7 +306,7 @@ export default class Game extends Component {
                                     Stats:
                                 </div>
                                 <div className="statTitle">
-                                     Moves &emsp; <span className="stat">{this.state.movements}</span>
+                                     Moves &emsp; <span className="stat">{this.state.moved}</span>
                                 </div>
                                 <div className="statTitle">
                                      Timer &esmp; <span className="stat">{this.state.timer}</span>
