@@ -19,7 +19,7 @@ export default class Game extends Component {
         colOfZero: 0
 
     }
-
+    // Create emoty array
     chunk = (array, size) => {
         const chunked_arr = [];
         for (let i = 0; i < array.length; i++) {
@@ -69,10 +69,10 @@ export default class Game extends Component {
 
         if (colWhereClicked == zeroColIndex) {
 
-            let collInicial = columnIndexClicked
-            let rowInicial = rowIndexClicked
+            let collInitial = columnIndexClicked
+            let rowInitial = rowIndexClicked
 
-            const colZeroInmutable = columnIndexClicked
+            const colZeroImmutable = columnIndexClicked
             const rowZeroInmutable = rowIndexClicked
 
             if (rowWhereClicked > rowOfZero) {
@@ -84,7 +84,7 @@ export default class Game extends Component {
             let count = 0
 
             // Current value
-            let actualValue = updateCollection[rowInicial][collInicial]
+            let actualValue = updateCollection[rowInitial][collInitial]
             let nextValue = 0
 
             while (true) {
@@ -93,11 +93,11 @@ export default class Game extends Component {
 
                 // Next value
                 if (direction == "up") {
-                    rowInicial += 1
-                    nextValue = updateCollection[rowInicial][collInicial]
+                    rowInitial += 1
+                    nextValue = updateCollection[rowInitial][collInitial]
                 } else {
-                    rowInicial -= 1
-                    nextValue = updateCollection[rowInicial][collInicial]
+                    rowInitial -= 1
+                    nextValue = updateCollection[rowInitial][collInitial]
                 }
 
                 if (nextValue == 0) {
@@ -110,8 +110,8 @@ export default class Game extends Component {
                             updateCollection[rowIndexClicked][columnIndexClicked] = numbers[i]
                         }
                     }
-                    updateCollection[rowZeroInmutable][colZeroInmutable] = 0
-                    this.setState({ collection: updateCollection, zeroColIndex: colZeroInmutable,
+                    updateCollection[rowZeroInmutable][colZeroImmutable] = 0
+                    this.setState({ collection: updateCollection, zeroColIndex: colZeroImmutable,
                     zeroRowIndex: rowZeroInmutable, rowOfZero: rowZeroInmutable });
                     moved = true
                     break;
@@ -120,10 +120,10 @@ export default class Game extends Component {
             }
         } else if (rowIndexClicked == zeroRowIndex) {
 
-            let collInicial = columnIndexClicked
-            let rowInicial = rowIndexClicked
+            let collInitial = columnIndexClicked
+            let rowInitial = rowIndexClicked
 
-            const colZeroInmutable = columnIndexClicked
+            const colZeroImmutable = columnIndexClicked
             const rowZeroInmutable = rowIndexClicked
 
             if (colWhereClicked > colOfZero) {
@@ -135,7 +135,7 @@ export default class Game extends Component {
             let count = 0
 
             // Current value
-            let actualValue = updateCollection[rowInicial][collInicial]
+            let actualValue = updateCollection[rowInitial][collInitial]
             let nextValue = 0
 
             while (true) {
@@ -144,11 +144,11 @@ export default class Game extends Component {
 
                 // Next value
                 if (direction == "right") {
-                    collInicial -= 1
-                    nextValue = updateCollection[rowInicial][collInicial]
+                    collInitial -= 1
+                    nextValue = updateCollection[rowInitial][collInitial]
                 } else {
-                    collInicial += 1
-                    nextValue = updateCollection[rowInicial][collInicial]
+                    collInitial += 1
+                    nextValue = updateCollection[rowInitial][collInitial]
                 }
 
                 if (nextValue == 0) {
@@ -161,8 +161,8 @@ export default class Game extends Component {
                             updateCollection[rowIndexClicked][columnIndexClicked] = numbers[i]
                         }
                     }
-                    updateCollection[rowZeroInmutable][colZeroInmutable] = 0
-                    this.setState({ collection: updateCollection, zeroColIndex: colZeroInmutable, zeroRowIndex: rowZeroInmutable, colOfZero: colZeroInmutable });
+                    updateCollection[rowZeroInmutable][colZeroImmutable] = 0
+                    this.setState({ collection: updateCollection, zeroColIndex: colZeroImmutable, zeroRowIndex: rowZeroInmutable, colOfZero: colZeroImmutable });
                     moved = true
                     break;
                 }
@@ -249,6 +249,7 @@ export default class Game extends Component {
 
     intervalTimer = 0;
 
+    // Timer
     timerStart() {
         this.intervalTimer = setInterval(() => {
             this.setState({
@@ -256,7 +257,7 @@ export default class Game extends Component {
             })
         }, 1000);
     }
-
+    // This method is called when a component is being removed from the DOM
     componentWillUnmount() {
         clearInterval(this.timerStart)
     }
@@ -272,7 +273,7 @@ export default class Game extends Component {
             cells: val
         })
     }
-
+    // Shuffle
     handlerRestart = () => {
         clearInterval(this.intervalTimer);
         this.setState({
@@ -306,10 +307,10 @@ export default class Game extends Component {
                                     Stats:
                                 </div>
                                 <div className="statTitle">
-                                     Moves &emsp; <span className="stat">{this.state.moved}</span>
+                                     <strike>Moves</strike>  <span className="stat">{this.state.moved}</span>
                                 </div>
                                 <div className="statTitle">
-                                     Timer &esmp; <span className="stat">{this.state.timer}</span>
+                                    Used time:  <span className="stat">{this.state.timer}</span>
                                 </div>
                             </div>
                             <div className="restartContainer">
