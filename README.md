@@ -15,6 +15,8 @@ Still need to fix counting `moved` function.
 
 [CSS-tricks](https://css-tricks.com/)
 
+[Four ways to chunk an array](https://medium.com/@Dragonza/four-ways-to-chunk-an-array-e19c889eac4)
+
 and some articles in Medium, Dev, Stack O. and Github.
 
 ---
