@@ -125,13 +125,13 @@ input::placeholder, textarea::placeholder {
     }
     .side .header {
         padding: 10px 30px;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: bold;
         background: #f2edf1;
         color: black;
     }
     .side .statTitle {
-        padding: 15px 20px;
+        padding: 5px 10px;
         color: #123123;
         border-top: 2px solid #f2edf1;
     }
@@ -141,13 +141,13 @@ input::placeholder, textarea::placeholder {
         float: right;
     }
     .side .restartContainer {
-        padding: 20px;
+        padding: 10px;
     }
     .side .restartContainer .restartBtn {
         border: 0;
         width: 100%;
         padding: 10px;
-        border-radius: 5px;
+        border-radius: 7px;
         display: block;
         font-weight: bold;
         color: black;
@@ -200,7 +200,7 @@ body {
         color: #333333;
         text-transform: uppercase;
         letter-spacing: 13px;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         -webkit-transition: all 0.4s ease;
         transition: all 0.4s ease;
     }
