@@ -3,7 +3,7 @@ Sliding puzzle in react.
 
 Still need to fix counting `moved` function.
 
-
+[Demo](https://andreasheige.github.io/react-puzzle/)
 
 ---
 ## Used links:
